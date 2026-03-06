@@ -1,0 +1,139 @@
+@import 'theme.css';
+
+/* Alapértelmezett sötét mód */
+body {
+    background-color: oklch(0.145 0 0);
+}
+
+/* Light mode osztályok */
+body.light-mode {
+    background-color: oklch(0.98 0 0);
+    color: oklch(0.2 0 0);
+}
+
+/* Header light mode */
+body.light-mode header {
+    background-color: oklch(0.98 0 0);
+    border-color: oklch(0.92 0 0);
+}
+
+body.light-mode header h1,
+body.light-mode header a:not(:hover) {
+    color: oklch(0.2 0 0);
+}
+
+body.light-mode .header button {
+    color: oklch(0.2 0 0);
+}
+
+/* Hero section light mode */
+body.light-mode .bg-gradient-to-b {
+    background: linear-gradient(to bottom, oklch(0.98 0 0), oklch(0.95 0 0), oklch(0.98 0 0));
+}
+
+/* Main content light mode */
+body.light-mode #mainContent {
+    background-color: oklch(0.98 0 0);
+    color: oklch(0.2 0 0);
+}
+
+/* Product cards light mode */
+body.light-mode .product-card {
+    background-color: oklch(0.95 0 0);
+    border-color: oklch(0.88 0 0);
+}
+
+body.light-mode .product-card h3 {
+    color: oklch(0.2 0 0);
+}
+
+body.light-mode .product-card p {
+    color: oklch(0.5 0 0);
+}
+
+/* About section light mode */
+body.light-mode #about {
+    background-color: oklch(0.95 0 0);
+    border-color: oklch(0.88 0 0);
+}
+
+/* Footer light mode */
+body.light-mode footer {
+    background-color: oklch(0.95 0 0);
+    border-color: oklch(0.88 0 0);
+}
+
+/* Input fields light mode */
+body.light-mode input[type="text"],
+body.light-mode input[type="search"],
+body.light-mode input[type="email"],
+body.light-mode textarea {
+    background-color: oklch(0.95 0 0);
+    border-color: oklch(0.88 0 0);
+    color: oklch(0.2 0 0);
+}
+
+/* Parallax - invert image in light mode */
+body.light-mode .parallax-bg img {
+    filter: invert(1) brightness(1.2);
+}
+
+/* Dark mode - remove invert */
+body:not(.light-mode) .parallax-bg img {
+    filter: none;
+}
+
+/* Filter buttons light mode */
+body.light-mode .filter-btn:not(.bg-white) {
+    background-color: oklch(0.95 0 0);
+    border-color: oklch(0.88 0 0);
+    color: oklch(0.2 0 0);
+}
+
+/* Cart sidebar light mode */
+body.light-mode #cartSidebar {
+    background-color: oklch(0.98 0 0);
+    border-color: oklch(0.88 0 0);
+}
+
+/* Section elements light mode */
+body.light-mode section:not(#parallaxBg) {
+    background-color: oklch(0.98 0 0);
+    color: oklch(0.2 0 0);
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+    body.light-mode header {
+        background-color: oklch(0.98 0 0);
+    }
+    
+    body.light-mode nav a {
+        color: oklch(0.2 0 0);
+    }
+}
+
+/* Parallax effect - smooth scrolling */
+.parallax-bg {
+    will-change: transform, opacity;
+    transition: opacity 0.1s ease-out;
+}
+
+/* Product hover effects */
+.product-card {
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+body.light-mode .product-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth theme transitions */
+body, header, footer, .product-card, section, input, button {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
